@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Currency Converter</title>
+
+<style>
+
+.container{
+    border:2px solid black;
+    padding:20px;
+    width:320px;
+}
+
+#result{
+    background-color:#dede2a;
+    color:darkblue;
+    border:2px solid red;
+    padding:10px;
+    font-weight:bold;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<h2>Currency Converter</h2>
+
+<div class="container">
+
+Amount:
+<input type="number" id="amount">
+
+<br><br>
+
+From:
+<select id="from">
+<option value="rupee">Rupee</option>
+<option value="dollar">Dollar</option>
+<option value="euro">Euro</option>
+</select>
+
+&nbsp;
+
+To:
+<select id="to">
+<option value="rupee">Rupee</option>
+<option value="dollar">Dollar</option>
+<option value="euro">Euro</option>
+</select>
+
+<br><br>
+
+<button onclick="convertCurrency()">Convert</button>
+
+</div>
+
+<br>
+
+<p id="result">Converted Amount will appear here</p>
+
+<script>
+
+function convertCurrency(){
+
+    var amount = parseFloat(document.getElementById("amount").value);
+    var from = document.getElementById("from").value;
+    var to = document.getElementById("to").value;
+
+    var rupees;
+
+    if(from == "rupee")
+        rupees = amount;
+
+    else if(from == "dollar")
+        rupees = amount * 80;
+
+    else if(from == "euro")
+        rupees = amount * 90;
+
+
+    var result;
+
+    if(to == "rupee")
+        result = rupees;
+
+    else if(to == "dollar")
+        result = rupees / 80;
+
+    else if(to == "euro")
+        result = rupees / 90;
+
+
+    document.getElementById("result").innerHTML = "Converted Amount : " + result;
+
+}
+
+</script>
+
+</body>
+</html>

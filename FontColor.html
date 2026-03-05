@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Paragraph Color Change</title>
+
+</head>
+<body>
+
+<h2>Paragraph Color Changer</h2>
+
+<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolorum est! Dicta aspernatur sint molestiae pariatur. Nobis exercitationem aliquid sed magni, eveniet, nisi repellendus, voluptates reprehenderit error cum ducimus inventore.</p>
+<p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quis voluptatum consectetur, distinctio nihil quisquam magni porro dolorem sunt sint, dolore repellendus alias aliquam, aspernatur nobis officiis iure? Obcaecati, nobis.</p>
+<p id="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis error ea ipsam voluptate eum facilis, maxime impedit sit ut sequi sapiente dicta dolores, earum maiores iure similique eos minima vel!</p>
+<p id="p4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit cumque sapiente rem distinctio at ad laudantium! A repudiandae maiores expedita obcaecati provident aperiam numquam. Dignissimos molestias possimus assumenda a magnam?</p>
+
+<br>
+
+<label>Select Color:</label>
+<input type="color" id="colorPicker">
+
+<br><br>
+
+<button onclick="changeColor()">Change Paragraph Style</button>
+
+</body>
+
+<script>
+function changeColor() {
+
+    var color = document.getElementById("colorPicker").value;
+
+    var p1 = document.getElementById("p1");
+    p1.style.color = color;
+    p1.style.fontWeight = "bold";
+    var p2 = document.getElementById("p2");
+    p2.style.color = color;
+    p2.style.fontWeight = "bold";
+    var p3 = document.getElementById("p3");
+    p3.style.color = color;
+    p3.style.fontWeight = "bold";
+    var p4 = document.getElementById("p4");
+    p4.style.color = color;
+    p4.style.fontWeight = "bold";
+}
+</script>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New User Registration</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        form {
+            background-color: white;
+            width: 380px;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        #output {
+            width: 420px;
+            margin: 20px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <!-- JavaScript Function -->
+    <script>
+        function showData() {
+            var fname = document.getElementById("firstname").value;
+            var lname = document.getElementById("lastname").value;
+            var uname = document.getElementById("username").value;
+            var gender = document.querySelector('input[name="gender"]:checked')?.value || "";
+
+            var langs = document.querySelectorAll('input[name="lang"]:checked');
+            var langList = [];
+            langs.forEach(function(item) {
+                langList.push(item.value);
+            });
+
+            var email = document.getElementById("email").value;
+
+            document.getElementById("output").style.display = "block";
+
+            document.getElementById("out_fname").innerHTML = fname;
+            document.getElementById("out_lname").innerHTML = lname;
+            document.getElementById("out_uname").innerHTML = uname;
+            document.getElementById("out_gender").innerHTML = gender;
+            document.getElementById("out_lang").innerHTML = langList.join(", ");
+            document.getElementById("out_email").innerHTML = email;
+
+            return false;
+        }
+    </script>
+
+</head>
+<body>
+
+    <h2 style="text-decoration: underline;">New User Registration</h2>
+
+    <form onsubmit="return showData();" style="box-shadow: 0px 0px 10px gray;">
+
+        <label>First Name:</label><br>
+        <input type="text" id="firstname"><br><br>
+
+        <label>Last Name:</label><br>
+        <input type="text" id="lastname"><br><br>
+
+        <label>Username:</label><br>
+        <input type="text" id="username"><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male <br>
+        <input type="radio" name="gender" value="Female"> Female <br>
+        <input type="radio" name="gender" value="Other"> Other <br><br>
+
+        <label>Known Languages:</label><br>
+        <input type="checkbox" name="lang" value="English"> English <br>
+        <input type="checkbox" name="lang" value="Marathi"> Marathi <br>
+        <input type="checkbox" name="lang" value="Hindi"> Hindi <br><br>
+
+        <label>Email ID:</label><br>
+        <input type="email" id="email"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="password"><br><br>
+
+        <label>Re-enter Password:</label><br>
+        <input type="password" id="repassword"><br><br>
+
+        <button type="submit" style="font-weight:bold;">Register</button>
+
+    </form>
+
+    <!-- Output Table -->
+    <div id="output" style="display:none;">
+
+        <h3 style="text-align:center;">Entered Details</h3>
+
+        <table style="border: 2px solid black;">
+            <tr><th>Field</th><th>Value</th></tr>
+            <tr><td>First Name</td><td id="out_fname"></td></tr>
+            <tr><td>Last Name</td><td id="out_lname"></td></tr>
+            <tr><td>Username</td><td id="out_uname"></td></tr>
+            <tr><td>Gender</td><td id="out_gender"></td></tr>
+            <tr><td>Languages Known</td><td id="out_lang"></td></tr>
+            <tr><td>Email ID</td><td id="out_email"></td></tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
