@@ -76,10 +76,10 @@ function convertCurrency(){
         rupees = amount;
 
     else if(from == "dollar")
-        rupees = amount * 80;
+        rupees = amount * 91.63;
 
     else if(from == "euro")
-        rupees = amount * 90;
+        rupees = amount * 106.49;
 
 
     var result;
@@ -88,10 +88,10 @@ function convertCurrency(){
         result = rupees;
 
     else if(to == "dollar")
-        result = rupees / 80;
+        result = rupees / 91.63;
 
     else if(to == "euro")
-        result = rupees / 90;
+        result = rupees / 106.49;
 
 
     document.getElementById("result").innerHTML = "Converted Amount : " + result;
