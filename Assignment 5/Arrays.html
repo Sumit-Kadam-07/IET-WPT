@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Array Operations</title>
+
+<script>
+
+let arr = ["Apple","Banana","Mango"];
+
+function checkValue(){
+
+    let value = document.getElementById("value").value;
+
+    if(arr.includes(value))
+        document.getElementById("result").innerHTML = "Value Found";
+    else
+        document.getElementById("result").innerHTML = "Value Not Found";
+
+}
+
+function addToEnd(){
+
+    let value = document.getElementById("value").value;
+
+    arr.push(value);
+
+    document.getElementById("finalArray").innerHTML = "Array : " + arr;
+
+}
+
+function insertAtIndex(){
+
+    let value = document.getElementById("value").value;
+    let index = document.getElementById("index").value;
+
+    arr.splice(index,0,value);
+
+    document.getElementById("finalArray").innerHTML = "Array : " + arr;
+
+}
+
+function removeAtIndex(){
+
+    let index = document.getElementById("index").value;
+
+    arr.splice(index,1);
+
+    document.getElementById("finalArray").innerHTML = "Array : " + arr;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Array Operations</h2>
+
+Enter Value:
+<input type="text" id="value">
+
+<button onclick="checkValue()">Check</button>
+
+<p id="result"></p>
+
+<br>
+
+<button onclick="addToEnd()">Add To End</button>
+
+<br><br>
+
+Enter Index:
+<input type="number" id="index">
+
+<button onclick="insertAtIndex()">Insert At Index</button>
+
+<br><br>
+
+<button onclick="removeAtIndex()">Remove At Index</button>
+
+<br><br>
+
+<p id="finalArray"></p>
+
+</body>
+</html>
