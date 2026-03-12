@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prototype Example</title>
+
+<script>
+
+// Object Constructor
+function Student(id, name)
+{
+    this.id = id;
+    this.name = name;
+}
+
+// Prototype Function
+Student.prototype.print = function()
+{
+    document.write("Student ID: " + this.id + "<br>");
+    document.write("Student Name: " + this.name + "<br>");
+}
+
+function showStudent()
+{
+    var s1 = new Student(1, "Rahul");
+    s1.print();
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Prototype Function Demo</h2>
+
+<button onclick="showStudent()">Show Student</button>
+
+</body>
+</html>
