@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+$("#num").change(function(){
+
+let n = $("#num").val()
+let fact = 1
+
+for(let i=1;i<=n;i++){
+fact *= i
+}
+
+$("#result").text("Factorial = " + fact)
+
+})
+
+})
+
+</script>
+
+</head>
+
+<body>
+
+Enter Number:
+<input type="number" id="num">
+
+<p id="result"></p>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function validateInput() {
+
+            let field = document.getElementById("txt")
+
+            if (!field.checkValidity()) {
+                document.getElementById("error").innerHTML = field.validationMessage
+            }
+            else {
+                document.getElementById("error").innerHTML = "Valid Input"
+            }
+
+        }
+
+    </script>
+
+    </head>
+
+    <body>
+
+        Enter Name:
+        <input type="text" id="txt" required minlength="3" maxlength="10">
+
+        <button onclick="validateInput()">Check</button>
+
+        <span id="error" style="color:rgb(247, 87, 78)"></span>
+
+    </body>
+
+</html>

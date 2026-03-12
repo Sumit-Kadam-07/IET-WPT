@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function calculateAge() {
+
+            let birthDate = new Date(document.getElementById("dob").value)
+
+            let today = new Date()
+
+            let age = today.getFullYear() - birthDate.getFullYear()
+
+            let m = today.getMonth() - birthDate.getMonth()
+
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--
+            }
+
+            document.getElementById("result").innerHTML = "Age : " + age
+            document.getElementById("result").innerHTML = "Age : " + age
+
+        }
+
+    </script>
+
+    </head>
+
+    <body>
+
+        Select Birth Date:
+        <input type="date" id="dob">
+
+        <br><br>
+
+        <button onclick="calculateAge()">Calculate Age</button>
+
+        <p id="result"></p>
+
+    </body>
+
+</html>

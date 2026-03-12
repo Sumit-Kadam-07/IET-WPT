@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+function saveStudent(){
+
+let id = document.getElementById("sid").value
+let name = document.getElementById("sname").value
+
+let student = {
+StudentId:id,
+StudentName:name
+}
+
+let row =
+"<tr><td>"+student.StudentId+"</td><td>"+student.StudentName+"</td></tr>"
+
+document.getElementById("tbody").innerHTML = row
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+Student Id:
+<input type="text" id="sid">
+
+<br><br>
+
+Student Name:
+<input type="text" id="sname">
+
+<br><br>
+
+<button onclick="saveStudent()">Save</button>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+<th>Student Id</th>
+<th>Student Name</th>
+</tr>
+
+<tbody id="tbody"></tbody>
+
+</table>
+
+</body>
+</html>
