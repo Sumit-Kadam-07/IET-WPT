@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Generate Username</title>
+
+<script>
+
+function generateUsername(){
+
+let fname = document.getElementById("fname").value
+let lname = document.getElementById("lname").value
+let dob = document.getElementById("dob").value
+
+// first 2 characters of firstname
+let firstPart = fname.substring(0, 2)
+
+// last 2 characters of lastname
+let lastPart = lname.substring(0, 2)
+
+// calculate age
+let birthDate = new Date(dob)
+let today = new Date()
+
+let age = today.getFullYear() - birthDate.getFullYear()
+
+let m = today.getMonth() - birthDate.getMonth()
+
+if(m < 0 || (m === 0 && today.getDate() < birthDate.getDate())){
+age--
+}
+
+let username = firstPart + age + lastPart
+
+document.getElementById("result").innerHTML = "Generated Username: " + username
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Username Generator</h2>
+
+First Name:
+<input type="text" id="fname">
+
+<br><br>
+
+Last Name:
+<input type="text" id="lname">
+
+<br><br>
+
+Birth Date:
+<input type="date" id="dob">
+
+<br><br>
+
+<button onclick="generateUsername()">Generate Username</button>
+
+<br><br>
+
+<p id="result"></p>
+
+</body>
+</html>
